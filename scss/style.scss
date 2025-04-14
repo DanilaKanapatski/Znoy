@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+button {
+  border: none;
+  background: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+$accent-color: #cbfc9e;
+$main-color: #292929;
+$second-color: #fff;
+$back-color: #151515;
+
+@font-face {
+  font-family: 'Gotham Pro'; /* Название шрифта (можете задать любое) */
+  src: url('../assets/fonts/gothampro_light.ttf') format('truetype'); /* Путь к файлу */
+  font-weight: 300; /* Жирность (normal, bold, 700 и т. д.) */
+  font-style: normal; /* Стиль (normal, italic) */
+}
+
+@font-face {
+  font-family: 'Gotham Pro'; /* Название шрифта (можете задать любое) */
+  src: url('../assets/fonts/gothampro_medium.ttf') format('truetype'); /* Путь к файлу */
+  font-weight: 500; /* Жирность (normal, bold, 700 и т. д.) */
+  font-style: normal; /* Стиль (normal, italic) */
+}
+
+@font-face {
+  font-family: 'Gotham Pro'; /* Название шрифта (можете задать любое) */
+  src: url('../assets/fonts/gothampro_bold.ttf') format('truetype'); /* Путь к файлу */
+  font-weight: bold; /* Жирность (normal, bold, 700 и т. д.) */
+  font-style: normal; /* Стиль (normal, italic) */
+}
+
+@mixin flex-default {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin input {
+  width: 100%;
+  border: none;
+  display: block;
+  border-radius: 5px;
+  background: #f6f6f6;;
+  line-height: 115%;
+  font-weight: 300;
+  color: #ababab;
+  padding: 10px 16px;
+}
+
+@mixin textarea {
+  width: 100%;
+  border: none;
+  font-weight: 300;
+
+  display: block;
+  border-radius: 5px;
+  background: #f6f6f6;;
+  line-height: 115%;
+  color: #ababab;
+  padding: 10px 16px;
+}
+
+@mixin section-name {
+  letter-spacing: -0.04em;
+  color: $desc-color;
+  padding: 19px 0;
+  border: 1px solid $desc-color;
+  border-radius: 36px;
+  text-align: center;
+}
+
+@mixin title {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 120%;
+  color: $main-color;
+}
+
+@mixin btn {
+  background: #292929;
+  color: $second-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: center;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+body {
+  color: $main-color;
+  font-family: "Gotham Pro", sans-serif;
+  background: $second-color;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.container {
+  margin: auto;
+  max-width: 1170px;
+}
+
+//header
+
+.header {
+  padding: 42px 0 0 0;
+
+  &-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 407px;
+    justify-content: right;
+    padding-bottom: 40px;
+  }
+
+  &-links {
+    margin-top: 9px;
+    display: flex;
+    gap: 28px;
+  }
+
+  &-list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 26px 0;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+
+    li a {
+      line-height: 120%;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+}
+
+//footer
+
+.footer {
+  margin-top: 60px;
+  background: $back-color;
+  padding: 40px 0 33px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-wrapper {
+    display: flex;
+    gap: 39px;
+  }
+
+  &-desc {
+    margin-top: 27px;
+    font-size: 12px;
+    line-height: 115%;
+    color: $second-color;
+    font-weight: 300;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    max-width: 100px;
+    width: 100px;
+
+    li a {
+      font-weight: 300;
+      line-height: 115%;
+      color: $second-color;
+    }
+  }
+
+  &-images {
+    display: flex;
+    gap: 31px;
+    margin-top: 39px;
+  }
+
+  &-first {
+    display: flex;
+    gap: 70px;
+  }
+
+  &-second {
+    display: flex;
+    gap: 30px;
+  }
+
+  &-third {
+    width: 323px;
+
+    .footer-list {
+      max-width: 323px;
+      width: 323px;
+    }
+  }
+
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 299px;
+  width: 100%;
+
+  &-block {
+    display: flex;
+    gap: 30px;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-desc {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 115%;
+    margin-top: 10px;
+  }
+}

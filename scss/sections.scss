@@ -1,0 +1,473 @@
+@import "style";
+
+//firstSection
+
+.firstSection {
+  margin-top: 53px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-wrapper {
+    max-width: 249px;
+    width: 100%;
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 110%;
+    color: #b59efc;
+    font-family: "Brotesk", sans-serif;
+  }
+
+  &-tabs {
+    margin-top: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    li {
+      font-weight: 500;
+      line-height: 120%;
+      border-radius: 50px;
+      padding: 10px 15px;
+      background: #f2f2f2;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 770px;
+    width: 100%;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    li:first-child {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    li:nth-child(2) {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 120%;
+    }
+
+    &__desc {
+      font-weight: 300;
+      line-height: 115%;
+    }
+
+    &__data {
+      font-size: 12px;
+      line-height: 115%;
+      font-weight: 300;
+    }
+
+  }
+}
+
+//firstSlider
+
+.firstSlider {
+  margin-top: 60px;
+
+  &-wrapper {
+    position: relative;
+    width: 870px; // Фиксированная ширина первого слайда
+    height: 464px;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Чтобы изображение заполняло блок
+    display: block;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    max-width: 389px;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+    color: $second-color;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+  }
+
+  &-name {
+    background: #b59efc;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    color: #fff;
+    width: 51px;
+  }
+
+  &-pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      background: #f3f3f4;
+      transition: background 0.3s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Стили для кнопки "Назад" (prev)
+  &-prev {
+    path {
+      stroke: #BEBEBE; // Неактивное состояние по умолчанию
+      transition: stroke 0.3s;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Остаётся серым, если нельзя листать
+      }
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364; // Становится тёмным, если можно листать
+      }
+    }
+  }
+
+  // Стили для кнопки "Вперёд" (next)
+  &-next {
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364; // Активное состояние по умолчанию
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Становится серым, если нельзя листать
+      }
+    }
+  }
+}
+
+.firstSliderSwiper {
+  //overflow: visible;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: 870px; // Фиксированная ширина
+    height: 464px;
+    margin-right: 30px !important; // Приоритет над стилями Swiper
+    flex-shrink: 0;
+
+    &:not(.swiper-slide-active) {
+      opacity: 1; // Убираем прозрачность
+    }
+  }
+}
+
+//secondSection
+
+.secondSection {
+  margin-top: 60px;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    li {
+      padding-top: 20px;
+      border-top: 1px solid #dfdfdf;
+      max-width: 570px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    li:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    li:nth-child(2) {
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  &-data {
+    font-size: 12px;
+    line-height: 115%;
+    font-weight: 300;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  &-desc {
+    line-height: 115%;
+    font-weight: 300;
+  }
+}
+
+//secondSlider
+
+.secondSlider {
+  margin-top: 60px;
+  position: relative;
+  overflow: visible;
+
+  &-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &-swiper {
+    width: 100%;
+    overflow: hidden;
+    height: 464px;
+  }
+
+  &-slide {
+    width: auto !important; /* Убираем фиксированную ширину */
+    margin-right: 130px;
+    position: relative;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-slide:first-child .secondSlider-content {
+    bottom: -78px;
+    left: 47px;
+    width: 322px;
+  }
+
+  &-slide:nth-child(3) .secondSlider-content {
+    bottom: -75px;
+    left: -93px;
+  }
+
+  &-img-container {
+    position: relative;
+    width: auto; /* Позволяем контейнеру принимать натуральную ширину изображения */
+    display: inline-block; /* Чтобы контейнер оборачивал изображение */
+
+    img {
+      width: auto; /* Сохраняем оригинальную ширину изображения */
+      height: auto; /* Сохраняем пропорции */
+      max-height: 440px; /* Максимальная высота */
+      display: block;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    background: #b59efc;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 28px 26px 27px 28px;
+
+    z-index: 10;
+    bottom: -24px;
+    max-width: 322px;
+    left: 48px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+  }
+
+  /* Остальные стили остаются без изменений */
+  &-prev, &-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    outline: none;
+  }
+
+  &-prev {
+    left: -68px;
+    background: #f3f3f4;
+
+    path {
+      stroke: #BEBEBE;
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364;
+      }
+    }
+
+    &.swiper-button-disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &-next {
+    right: -68px;
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364;
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+      cursor: not-allowed;
+
+      path {
+        stroke: #BEBEBE;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    margin: 0;
+  }
+
+  &-desc {
+    line-height: 115%;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  &-data {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 115%;
+    margin: 0;
+  }
+}
+
+//thirdSection
+
+.thirdSection {
+  margin-top: 60px;
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    max-width: 560px;
+    margin-top: 28px;
+  }
+
+  &-data {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 115%;
+    font-weight: 300;
+  }
+}
+
+//fourthSection
+
+.fourthSection {
+  margin-top: 80px;
+
+  &-content {
+    padding: 29px 70px 28px 69px;
+    background: #b59efc;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+    gap: 28px;
+  }
+
+  &-link {
+    @include btn;
+    max-width: 401px;
+    padding: 21px 0;
+    font-size: 16px;
+    border-radius: 0;
+  }
+}

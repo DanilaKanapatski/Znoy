@@ -32,6 +32,12 @@ html {
   font-style: normal; /* Стиль (normal, italic) */
 }
 @font-face {
+  font-family: "Brotesk"; /* Название шрифта (можете задать любое) */
+  src: url("../assets/fonts/Brotesk (Trial) Semibold.otf") format("opentype"); /* Путь к файлу */
+  font-weight: 500; /* Жирность (normal, bold, 700 и т. д.) */
+  font-style: normal; /* Стиль (normal, italic) */
+}
+@font-face {
   font-family: "Gotham Pro"; /* Название шрифта (можете задать любое) */
   src: url("../assets/fonts/gothampro_medium.ttf") format("truetype"); /* Путь к файлу */
   font-weight: 500; /* Жирность (normal, bold, 700 и т. д.) */

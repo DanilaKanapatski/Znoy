@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>Зноу</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="../js/sectionsFirstSlider.js"></script>
+    <script defer src="../js/sectionsSecondSlider.js"></script>
 </head>
 <body>
 <header class="header">
@@ -44,128 +48,219 @@
     </ul>
 </header>
 <main>
-    <section>
+    <section class="firstSection">
         <div class="container">
-            <h2>Движ</h2>
-            <ul>
-                <li>Клубы</li>
-                <li>Концерты</li>
-                <li>Мастерклассы</li>
-                <li>Благотворительность</li>
-                <li>Места</li>
-                <li>Анонсы</li>
-                <li>Чудеса</li>
-                <li>IT</li>
-            </ul>
-            <ul>
+            <div class="firstSection-wrapper">
+                <h2 class="firstSection-title">Движ</h2>
+                <ul class="firstSection-tabs">
+                    <li>Клубы</li>
+                    <li>Концерты</li>
+                    <li>Мастерклассы</li>
+                    <li>Благотворительность</li>
+                    <li>Места</li>
+                    <li>Анонсы</li>
+                    <li>Чудеса</li>
+                    <li>IT</li>
+                </ul>
+            </div>
+            <ul class="firstSection-list">
                 <li>
-                    <h2>Обзор «Atomic Heart: Чары морских глубин»</h2>
-                    <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. </p>
-                    <span>01.02.2025</span>
+                    <h2 class="firstSection-list__title">Обзор «Atomic Heart: Чары морских глубин»</h2>
+                    <p class="firstSection-list__desc">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое.</p>
+                    <span class="firstSection-list__data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>Заметили подозрительные QR-коды возле минских подъездов. </h2>
-                    <p>На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. </p>
-                    <span>01.02.2025</span>
+                    <h2 class="firstSection-list__title">Заметили подозрительные QR-коды возле минских подъездов. </h2>
+                    <p class="firstSection-list__desc">На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука.</p>
+                    <span class="firstSection-list__data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>«Ведьмак» и Pixar. Главные мультфильмы февраля</h2>
-                    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового </p>
-                    <span>01.02.2025</span>
+                    <h2 class="firstSection-list__title">«Ведьмак» и Pixar. Главные мультфильмы февраля</h2>
+                    <p class="firstSection-list__desc">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового</p>
+                    <span class="firstSection-list__data">01.02.2025</span>
                 </li>
             </ul>
         </div>
     </section>
-    <section>
+    <section class="firstSlider">
         <div class="container">
-            <img src="../assets/images/sections-1.png" alt="">
-            <img src="../assets/images/sections-2.png" alt="">
+            <div class="swiper firstSliderSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide firstSlider-wrapper">
+                        <img class="firstSlider-img" src="../assets/images/sections-1.png" alt="">
+                        <div class="firstSlider-content">
+                            <span class="firstSlider-name">ДВИЖ</span>
+                            <p class="firstSlider-desc">«Оперативность небольшой текст небольшие активно использует мультимедийные форматы - фото, видео, инфографику.»</p>
+                            <span class="firstSlider-data">01.02.2025</span>
+                        </div>
+                    </div>
+                    <!-- Слайд 2 -->
+                    <div class="swiper-slide firstSlider-wrapper">
+                        <img class="firstSlider-img" src="../assets/images/sections-2.png" alt="">
+                        <div class="firstSlider-content">
+                            <span class="firstSlider-name">ДВИЖ</span>
+                            <p class="firstSlider-desc">«Оперативность небольшой текст небольшие активно использует мультимедийные форматы - фото, видео, инфографику.»</p>
+                            <span class="firstSlider-data">01.02.2025</span>
+                        </div>
+                    </div>
+                    <!-- Добавьте больше слайдов при необходимости -->
+                </div>
+                <!-- Кнопки навигации -->
+                <div class="firstSlider-pagination">
+                    <button class="firstSlider-prev">
+                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5 1.5L2 8L8.5 14.5" stroke="#BEBEBE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="firstSlider-next">
+                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 14.5L8 8L1.5 1.5" stroke="#636364" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
-    <section>
+    <section class="secondSection">
         <div class="container">
-            <ul>
+            <ul class="secondSection-list">
                 <li>
-                    <h2>Обзор «Atomic Heart: Чары морских глубин»</h2>
-                    <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели
+                    <h2 class="secondSection-title">Обзор «Atomic Heart: Чары морских глубин»</h2>
+                    <p class="secondSection-desc">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели
                         превратился в страшное насекомое. </p>
-                    <span>01.02.2025</span>
+                    <span class="secondSection-data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>Заметили подозрительные QR-коды возле минских подъездов. </h2>
-                    <p>На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала
+                    <h2 class="secondSection-title">Заметили подозрительные QR-коды возле минских подъездов. </h2>
+                    <p class="secondSection-desc">На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала
                         зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. </p>
-                    <span>01.02.2025</span>
+                    <span class="secondSection-data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>«Ведьмак» и Pixar. Главные мультфильмы февраля</h2>
-                    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
+                    <h2 class="secondSection-title">«Ведьмак» и Pixar. Главные мультфильмы февраля</h2>
+                    <p class="secondSection-desc">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
                         всех живут они в буквенных домах на берегу Семантика большого языкового </p>
-                    <span>01.02.2025</span>
+                    <span class="secondSection-data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>Обзор «Atomic Heart: Чары морских глубин»</h2>
-                    <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели
+                    <h2 class="secondSection-title">Обзор «Atomic Heart: Чары морских глубин»</h2>
+                    <p class="secondSection-desc">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели
                         превратился в страшное насекомое. </p>
-                    <span>01.02.2025</span>
+                    <span class="secondSection-data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>Заметили подозрительные QR-коды возле минских подъездов. </h2>
-                    <p>На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала
+                    <h2 class="secondSection-title">Заметили подозрительные QR-коды возле минских подъездов. </h2>
+                    <p class="secondSection-desc">На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала
                         зрителю тяжелую меховую муфту, в которой целиком исчезала ее рука. </p>
-                    <span>01.02.2025</span>
+                    <span class="secondSection-data">01.02.2025</span>
                 </li>
                 <li>
-                    <h2>«Ведьмак» и Pixar. Главные мультфильмы февраля</h2>
-                    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
+                    <h2 class="secondSection-title">«Ведьмак» и Pixar. Главные мультфильмы февраля</h2>
+                    <p class="secondSection-desc">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от
                         всех живут они в буквенных домах на берегу Семантика большого языкового </p>
-                    <span>01.02.2025</span>
+                    <span class="secondSection-data">01.02.2025</span>
                 </li>
             </ul>
         </div>
 
     </section>
-    <section>
-        <div class="container">
-            <div>
-                <img src="../assets/images/sections-3.png" alt="">
-                <div>
-                    <h2>Мультимедийный контент</h2>
-                    <p>ЗНОЎ активно использует мультимедийные форматы - фото, видео, инфографику.</p>
+    <section class="secondSlider">
+        <div class="secondSlider-container">
+            <button class="secondSlider-prev">
+                <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.5 1.5L2 8L8.5 14.5" stroke="#BEBEBE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div class="swiper secondSlider-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide secondSlider-slide">
+                        <div class="secondSlider-img-container">
+                            <img src="../assets/images/sections-3.png" alt="">
+                            <div class="secondSlider-content">
+                                <h2 class="secondSlider-title">Мультимедийный контент</h2>
+                                <p class="secondSlider-desc">ЗНОЎ активно использует мультимедийные форматы - фото, видео, инфографику.</p>
+                                <span class="secondSlider-data">01.02.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide secondSlider-slide">
+                        <div class="secondSlider-img-container">
+                            <img src="../assets/images/sections-4.png" alt="">
+                            <div class="secondSlider-content">
+                                <h2 class="secondSlider-title">Мультимедийный контент</h2>
+                                <p class="secondSlider-desc">ЗНОЎ активно использует мультимедийные форматы - фото, видео, инфографику.</p>
+                                <span class="secondSlider-data">01.02.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide secondSlider-slide">
+                        <div class="secondSlider-img-container">
+                            <img src="../assets/images/sections-5.png" alt="">
+                            <div class="secondSlider-content">
+                                <h2 class="secondSlider-title">Мультимедийный контент</h2>
+                                <p class="secondSlider-desc">ЗНОЎ активно использует мультимедийные форматы - фото, видео, инфографику.</p>
+                                <span class="secondSlider-data">01.02.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide secondSlider-slide">
+                        <div class="secondSlider-img-container">
+                            <img src="../assets/images/sections-3.png" alt="">
+                            <div class="secondSlider-content">
+                                <h2 class="secondSlider-title">Мультимедийный контент</h2>
+                                <p class="secondSlider-desc">ЗНОЎ активно использует мультимедийные форматы</p>
+                                <span class="secondSlider-data">01.02.2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide secondSlider-slide">
+                        <div class="secondSlider-img-container">
+                            <img src="../assets/images/sections-4.png" alt="">
+                            <div class="secondSlider-content">
+                                <h2 class="secondSlider-title">Мультимедийный контент</h2>
+                                <p class="secondSlider-desc">ЗНОЎ активно использует мультимедийные форматы</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide secondSlider-slide">
+                        <div class="secondSlider-img-container">
+                            <img src="../assets/images/sections-5.png" alt="">
+                            <div class="secondSlider-content">
+                                <h2 class="secondSlider-title">Мультимедийный контент</h2>
+                                <p class="secondSlider-desc">ЗНОЎ активно использует мультимедийные форматы</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Добавьте остальные 5 слайдов -->
                 </div>
             </div>
-            <div>
-                <img src="../assets/images/sections-4.png" alt="">
-                <div>
-                    <h2>Мультимедийный контент</h2>
-                    <p>ЗНОЎ активно использует мультимедийные форматы - фото, видео, инфографику.</p>
-                </div>
-            </div>
-            <div>
-                <img src="../assets/images/sections-5.png" alt="">
-                <div>
-                    <h2>Мультимедийный контент</h2>
-                    <p>ЗНОЎ активно использует мультимедийные форматы - фото, видео, инфографику.</p>
-                </div>
-            </div>
+
+            <button class="secondSlider-next">
+                <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 14.5L8 8L1.5 1.5" stroke="#636364" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </section>
-    <section>
+    <section class="thirdSection">
         <div class="container">
             <img src="../assets/images/sections-6.png" alt="">
-            <p>«Оперативность небольшой текст небольшие активно использует мультимедийные форматы - фото, видео, инфографику.»</p>
-            <span>01.02.2025</span>
+            <p class="thirdSection-desc">«Оперативность небольшой текст небольшие активно использует мультимедийные форматы - фото, видео, инфографику.»</p>
+            <span class="thirdSection-data">01.02.2025</span>
         </div>
     </section>
-    <section>
+    <section class="fourthSection">
         <div class="container">
-            <div>
-                <a href="">Читайте нас в Telegram
+            <div class="fourthSection-content">
+                <div class="fourthSection-text" href=""><span>Читайте нас в Telegram</span>
                     <svg width="30" height="25" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M27.0661 0.160058L1.3553 10.0746C-0.399357 10.7794 -0.389205 11.7582 1.03337 12.1947L7.63436 14.2539L22.9071 4.61776C23.6293 4.17837 24.2891 4.41474 23.7468 4.89618L11.3728 16.0636H11.3699L11.3728 16.0651L10.9175 22.8691C11.5845 22.8691 11.8789 22.5631 12.253 22.202L15.4593 19.0843L22.1284 24.0103C23.3581 24.6876 24.2413 24.3395 24.5472 22.872L28.9252 2.23954C29.3733 0.442833 28.2393 -0.37069 27.0661 0.160058Z" fill="#292929" />
                     </svg>
-                </a>
-                <a href="">Перейти</a>
+                </div>
+                <a class="fourthSection-link"  href="">Перейти</a>
             </div>
         </div>
     </section>

@@ -7,6 +7,7 @@
 
   &-wrapper {
     display: flex;
+    gap: 30px;
     justify-content: space-between;
   }
 
@@ -124,6 +125,115 @@
         font-weight: 500;
         font-size: 20px;
         line-height: 120%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .contacts {
+    margin-top: 40px;
+
+    &-desc {
+      font-size: 12px;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    &-links {
+
+      .contacts-link {
+        font-size: 16px;
+      }
+    }
+
+    &-form {
+      max-width: 350px;
+    }
+
+    &-subtitle {
+      font-size: 12px;
+    }
+
+    &-data {
+      margin-top: 10px;
+    }
+
+    &-info {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+  }
+
+  //team
+
+  .team {
+    margin-top: 50px;
+
+    &-list {
+      margin-top: 30px;
+      gap: 25px 10px;
+
+      li {
+        max-width: 168px;
+
+        span:first-child {
+          font-size: 10px;
+        }
+
+        span:nth-child(2) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contacts {
+    margin-top: 54px;
+
+    &-wrapper {
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    &-form {
+      max-width: 320px;
+    }
+
+    &-info {
+      gap: 20px;
+    }
+
+  }
+
+  //team
+
+  .team {
+    &-title {
+      text-align: left  ;
+    }
+
+    &-list {
+      margin-top: 20px;
+      gap: 20px;
+
+      li {
+        max-width: 270px;
+
+        span:first-child {
+          font-size: 12px;
+        }
+
+        span:nth-child(2) {
+          font-size: 16px;
+        }
       }
     }
   }

@@ -296,12 +296,12 @@ body {
       margin-top: 12px;
       gap: 20px;
 
-      a:first-child svg{
+      a:first-child svg {
         width: 20px;
         height: 19px;
       }
 
-      a:nth-child(2) svg{
+      a:nth-child(2) svg {
         width: 23px;
         height: 19px;
       }
@@ -355,27 +355,27 @@ body {
         height: 15px;
       }
 
-      a:first-child svg{
+      a:first-child svg {
         width: 14px;
       }
 
-      a:nth-child(2) svg{
+      a:nth-child(2) svg {
         width: 21px;
       }
 
-      a:nth-child(3) svg{
+      a:nth-child(3) svg {
         width: 15px;
       }
 
-      a:nth-child(4) svg{
+      a:nth-child(4) svg {
         width: 14px;
       }
 
-      a:nth-child(5) svg{
+      a:nth-child(5) svg {
         width: 16px;
       }
 
-      a:nth-child(6) svg{
+      a:nth-child(6) svg {
         width: 13px;
       }
     }
@@ -415,9 +415,36 @@ body {
   }
 
   .header-mob {
+    height: 57px;
     display: block;
     position: relative;
     padding-top: 29px;
+
+    &__wrapper {
+      margin-top: 46px;
+      background: #f6f6f6;
+      padding: 50px 0;
+    }
+
+    &__list {
+      display: flex;
+      gap: 60px;
+
+      a {
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 300;
+      }
+    }
+
+    &__images {
+      margin-top: 56px;
+      display: flex;
+      max-width: 193px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
   }
 
   .header-mob .container {
@@ -438,7 +465,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 1002;
   }
 
   /* Стили кнопки меню */
@@ -519,7 +546,8 @@ body {
     background-color: #fff;
     z-index: 1000;
     display: none;
-    margin-top: 111px;
+    padding-top: 111px;
+    margin-top: 0;
     overflow-y: auto;
   }
 
@@ -547,6 +575,7 @@ body {
 
   /* Состояние открытого меню */
   .menu-open .header-content {
+    align-items: flex-start;
     justify-content: space-between;
   }
 
@@ -613,27 +642,27 @@ body {
         height: 27px;
       }
 
-      a:first-child svg{
+      a:first-child svg {
         width: 27px;
       }
 
-      a:nth-child(2) svg{
+      a:nth-child(2) svg {
         width: 38px;
       }
 
-      a:nth-child(3) svg{
+      a:nth-child(3) svg {
         width: 27px;
       }
 
-      a:nth-child(4) svg{
+      a:nth-child(4) svg {
         width: 26px;
       }
 
-      a:nth-child(5) svg{
+      a:nth-child(5) svg {
         width: 30px;
       }
 
-      a:nth-child(6) svg{
+      a:nth-child(6) svg {
         width: 23px;
       }
     }

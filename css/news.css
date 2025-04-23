@@ -192,8 +192,8 @@ body {
 
 @media screen and (max-width: 1068px) {
   .container {
-    max-width: 749px;
-    padding: 0 20px;
+    max-width: 768px;
+    padding: 0 29px;
   }
   .header {
     padding: 31px 0 0 0;
@@ -289,16 +289,39 @@ body {
 }
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 350px;
-    padding: 0 15px;
+    max-width: 360px;
+    padding: 0 20px;
   }
   .header {
     display: none;
   }
   .header-mob {
+    height: 57px;
     display: block;
     position: relative;
     padding-top: 29px;
+  }
+  .header-mob__wrapper {
+    margin-top: 46px;
+    background: #f6f6f6;
+    padding: 50px 0;
+  }
+  .header-mob__list {
+    display: flex;
+    gap: 60px;
+  }
+  .header-mob__list a {
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: 300;
+  }
+  .header-mob__images {
+    margin-top: 56px;
+    display: flex;
+    max-width: 193px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
   }
   .header-mob .container {
     position: relative;
@@ -315,7 +338,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 1002;
   }
   /* Стили кнопки меню */
   .menu-toggle {
@@ -386,7 +409,8 @@ body {
     background-color: #fff;
     z-index: 1000;
     display: none;
-    margin-top: 111px;
+    padding-top: 111px;
+    margin-top: 0;
     overflow-y: auto;
   }
   .menu-list {
@@ -410,6 +434,7 @@ body {
   }
   /* Состояние открытого меню */
   .menu-open .header-content {
+    align-items: flex-start;
     justify-content: space-between;
   }
   .menu-open .header-logo {
@@ -507,7 +532,7 @@ body {
   color: #292929;
 }
 
-@media screen and (max-width: 10768px) {
+@media screen and (max-width: 1068px) {
   .news-title {
     font-size: 20px;
   }

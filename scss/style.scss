@@ -89,14 +89,14 @@ $back-color: #151515;
   padding: 10px 16px;
 }
 
-@mixin section-name {
-  letter-spacing: -0.04em;
-  color: $desc-color;
-  padding: 19px 0;
-  border: 1px solid $desc-color;
-  border-radius: 36px;
-  text-align: center;
-}
+//@mixin section-name {
+//  letter-spacing: -0.04em;
+//  color: $desc-color;
+//  padding: 19px 0;
+//  border: 1px solid $desc-color;
+//  border-radius: 36px;
+//  text-align: center;
+//}
 
 @mixin title {
   font-weight: 500;
@@ -104,7 +104,7 @@ $back-color: #151515;
   line-height: 120%;
   color: $main-color;
 
-  @media screen and (max-width: 10768px) {
+  @media screen and (max-width: 1068px) {
     font-size: 20px;
   }
 
@@ -274,8 +274,8 @@ body {
 
 @media screen and (max-width: 1068px) {
   .container {
-    max-width: 749px;
-    padding: 0 20px;
+    max-width: 768px;
+    padding: 0 29px;
   }
 
   //header
@@ -404,8 +404,8 @@ body {
 
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 350px;
-    padding: 0 15px;
+    max-width: 360px;
+    padding: 0 20px;
   }
 
   //header

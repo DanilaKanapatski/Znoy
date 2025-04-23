@@ -175,8 +175,8 @@ body {
 
 @media screen and (max-width: 1068px) {
   .container {
-    max-width: 749px;
-    padding: 0 20px;
+    max-width: 768px;
+    padding: 0 29px;
   }
   .header {
     padding: 31px 0 0 0;
@@ -272,8 +272,8 @@ body {
 }
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 350px;
-    padding: 0 15px;
+    max-width: 360px;
+    padding: 0 20px;
   }
   .header {
     display: none;
@@ -513,7 +513,7 @@ body {
   line-height: 120%;
   color: #292929;
 }
-@media screen and (max-width: 10768px) {
+@media screen and (max-width: 1068px) {
   .news-title {
     font-size: 20px;
   }

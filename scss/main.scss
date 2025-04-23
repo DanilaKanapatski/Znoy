@@ -1,0 +1,2266 @@
+//firstSection
+
+@import "style";
+
+img {
+  vertical-align: bottom; /* или top/middle */
+  display: block; /* полностью убирает отступ */
+}
+
+.firstSection-wrapper {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.firstSection-mainBlock {
+  position: relative;
+  width: 57.2%;
+  max-width: 806px;
+
+  &__title {
+    max-width: 500px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 120%;
+  }
+
+  &__content {
+    z-index: 2;
+    position: absolute;
+    bottom: 26px;
+    left: 28px;
+    display: flex;
+    gap: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+    color: #222426;
+  }
+
+  &__desc {
+    max-width: 600px;
+    line-height: 115%;
+    font-weight: 300;
+  }
+
+  &__name {
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    background: #cbfc9e;
+  }
+}
+
+.firstSection-block {
+  position: relative;
+  width: 50%;
+
+  &:nth-child(2) {
+    .firstSection-block__name {
+      background: #b59efc;
+    }
+  }
+
+  &:nth-child(3) {
+    .firstSection-block__name {
+      background: #cbfc9e;
+    }
+  }
+
+  &:last-child {
+    .firstSection-block__name {
+      background: #02aed8;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 42.7%;
+    max-width: 636px;
+
+  }
+
+  &__title {
+    max-width: 500px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 120%;
+  }
+
+  &__content {
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  &__data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+    color: #fff;
+  }
+
+  &__desc {
+    max-width: 270px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    color: white;
+  }
+
+  &__name {
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    background: #e48498;
+    color: white;
+  }
+
+
+}
+
+//firstSlider
+
+.firstSlider {
+  margin-top: 60px;
+
+  &-title {
+    @include title;
+    font-weight: 700;
+  }
+
+  &-wrapper {
+    margin-top: 40px;
+    position: relative;
+    width: 870px; // Фиксированная ширина первого слайда
+    height: 464px;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Чтобы изображение заполняло блок
+    display: block;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    max-width: 389px;
+
+    div {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+    color: $second-color;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+  }
+
+  &-name {
+    background: #cbfc9e;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  &-name:nth-child(2) {
+    background: #b59efc;
+    color: #fff;
+  }
+
+  &-pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      background: #f3f3f4;
+      transition: background 0.3s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Стили для кнопки "Назад" (prev)
+  &-prev {
+    path {
+      stroke: #BEBEBE; // Неактивное состояние по умолчанию
+      transition: stroke 0.3s;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Остаётся серым, если нельзя листать
+      }
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364; // Становится тёмным, если можно листать
+      }
+    }
+  }
+
+  // Стили для кнопки "Вперёд" (next)
+  &-next {
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364; // Активное состояние по умолчанию
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Становится серым, если нельзя листать
+      }
+    }
+  }
+}
+
+.firstSliderSwiper {
+  //overflow: visible;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: 870px; // Фиксированная ширина
+    height: 464px;
+    margin-right: 30px !important; // Приоритет над стилями Swiper
+    flex-shrink: 0;
+
+    &:not(.swiper-slide-active) {
+      opacity: 1; // Убираем прозрачность
+    }
+  }
+}
+
+.secondSection {
+  margin-top: 40px;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+
+    li {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 568px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    li:nth-child(5) {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    li:nth-child(6) {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &-name {
+    padding: 5px;
+    background: #cbfc9e;;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+
+  &-desc {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+}
+
+.secondSlider {
+  margin-top: 60px;
+  position: relative;
+  overflow: visible;
+
+  &-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &-swiper {
+    width: 100%;
+    overflow: hidden;
+    height: 464px;
+  }
+
+  &-slide {
+    width: auto !important; /* Убираем фиксированную ширину */
+    margin-right: 130px;
+    position: relative;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-slide:first-child .secondSlider-content {
+    bottom: -78px;
+    left: 47px;
+    width: 322px;
+  }
+
+  &-slide:nth-child(3) .secondSlider-content {
+    bottom: -75px;
+    left: -93px;
+  }
+
+  &-img-container {
+    position: relative;
+    width: auto; /* Позволяем контейнеру принимать натуральную ширину изображения */
+    display: inline-block; /* Чтобы контейнер оборачивал изображение */
+
+    img {
+      width: auto; /* Сохраняем оригинальную ширину изображения */
+      height: auto; /* Сохраняем пропорции */
+      max-height: 440px; /* Максимальная высота */
+      display: block;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    background: #292929;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+    padding: 26px 26px 29px 26px;
+
+    z-index: 10;
+    bottom: -24px;
+    width: 322px;
+    left: 48px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+  }
+
+  /* Остальные стили остаются без изменений */
+  &-prev, &-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    outline: none;
+  }
+
+  &-prev {
+    left: -68px;
+    background: #f3f3f4;
+
+    path {
+      stroke: #BEBEBE;
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364;
+      }
+    }
+
+    &.swiper-button-disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &-next {
+    right: -68px;
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364;
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+      cursor: not-allowed;
+
+      path {
+        stroke: #BEBEBE;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    margin: 0;
+    color: white;
+  }
+
+  &-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    padding: 5px;
+    background: #cbfc9e;
+  }
+
+  &-desc {
+    line-height: 115%;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    color: white;
+  }
+
+  &-data {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 115%;
+    margin: 0;
+    color: white;
+  }
+}
+
+//thirdSection
+
+.thirdSection {
+  margin-top: 60px;
+
+  img {
+    width: 100%;
+  }
+
+  &-title {
+    @include title;
+    margin-bottom: 40px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 28px;
+    max-width: 560px;
+  }
+
+  &-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    color: #fff;
+    padding: 5px;
+    background: #02aed8;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+
+}
+
+//thirdSlider
+
+.thirdSlider {
+  margin-top: 40px;
+
+  &-swiper {
+    overflow: hidden; // Скрываем всё, что выходит за границы
+  }
+
+  &-wrapper {
+    position: relative;
+    // Добавляем отступ между слайдами через margin-right
+    width: auto; // Ширина по содержимому
+    max-width: 225px;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    max-width: 177px;
+  }
+
+  &-pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      background: #f3f3f4;
+      transition: background 0.3s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Стили для кнопки "Назад" (prev)
+  &-prev {
+    path {
+      stroke: #BEBEBE; // Неактивное состояние по умолчанию
+      transition: stroke 0.3s;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Остаётся серым, если нельзя листать
+      }
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364; // Становится тёмным, если можно листать
+      }
+    }
+  }
+}
+
+//fourthSection
+
+.fourthSection {
+  margin-top: 60px;
+
+  &-title {
+    @include title;
+  }
+
+  &-wrapper {
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+  }
+
+  .fourthSection-mainBlock {
+    position: relative;
+    max-width: 570px;
+
+    &__content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      bottom: 46px;
+      max-width: 408px;
+      left: 81px;
+    }
+
+    &__name {
+      background: #e48498;
+      padding: 5px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 120%;
+      color: #fff;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 120%;
+      text-align: center;
+      color: #fff;
+    }
+
+    &__desc {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 115%;
+      text-align: center;
+      color: #fff;
+    }
+
+    &__data {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 115%;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  .fourthSection-blocks__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+  }
+
+  .fourthSection-block {
+
+    max-width: 270px;
+
+    &__content {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+  }
+
+    &__name {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 120%;
+      color: #fff;
+      padding: 5px;
+      background: #e48498;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+    }
+
+    &__desc {
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 115%;
+    }
+
+    &__data {
+      font-size: 12px;
+      line-height: 115%;
+      font-weight: 300;
+    }
+  }
+}
+
+//fifthSection
+
+.fifthSection {
+  margin-top: 40px;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+
+    li {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 568px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #dfdfdf;
+
+      div {
+        display: flex;
+        gap: 10px;
+
+        .fifthSection-name:nth-child(2) {
+          background: #02aed8;
+        }
+      }
+    }
+
+    li:nth-child(5) {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    li:nth-child(6) {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &-name {
+    padding: 5px;
+    background: #e48498;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    color: white;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+
+  &-desc {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+}
+
+//fourthSlider
+
+.fourthSliderSwiper {
+  margin-top: 40px;
+}
+
+.fourthSlider {
+  margin-top: 60px;
+
+  &-title {
+    @include title;
+    font-weight: 700;
+  }
+
+  &-wrapper {
+    //margin-top: 40px;
+    position: relative;
+    width: 870px; // Фиксированная ширина первого слайда
+    height: 464px;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Чтобы изображение заполняло блок
+    display: block;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: 35px;
+    left: 13px;
+    z-index: 2;
+    max-width: 389px;
+
+    div {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+    color: $second-color;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+  }
+
+  &-name {
+    background: #fca99e;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  &-name:nth-child(2) {
+    background: #b59efc;
+    color: #fff;
+  }
+
+  &-pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      background: #f3f3f4;
+      transition: background 0.3s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Стили для кнопки "Назад" (prev)
+  &-prev {
+    path {
+      stroke: #BEBEBE; // Неактивное состояние по умолчанию
+      transition: stroke 0.3s;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Остаётся серым, если нельзя листать
+      }
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364; // Становится тёмным, если можно листать
+      }
+    }
+  }
+
+  // Стили для кнопки "Вперёд" (next)
+  &-next {
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364; // Активное состояние по умолчанию
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Становится серым, если нельзя листать
+      }
+    }
+  }
+}
+
+.fourthSliderSwiper {
+  //overflow: visible;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: 470px; // Фиксированная ширина
+    height: 682px;
+    margin-right: 30px !important; // Приоритет над стилями Swiper
+    flex-shrink: 0;
+
+    &:not(.swiper-slide-active) {
+      opacity: 1; // Убираем прозрачность
+    }
+  }
+}
+
+//sixthSection
+
+.sixthSection {
+  margin-top: 60px;
+
+  &-title {
+    @include title;
+    margin-bottom: 40px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 28px;
+    max-width: 560px;
+  }
+
+  &-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    padding: 5px;
+    background: #fc9ea3;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+
+}
+
+//fifthSlider
+
+.fifthSlider {
+  margin-top: 40px;
+  position: relative;
+  overflow: visible;
+
+  &-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &-swiper {
+    width: 100%;
+    overflow: hidden;
+    height: 464px;
+  }
+
+  &-slide {
+    width: auto !important; /* Убираем фиксированную ширину */
+    margin-right: 130px;
+    position: relative;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-slide:first-child .fifthSlider-content {
+    bottom: -78px;
+    left: 47px;
+    width: 322px;
+  }
+
+  &-slide:nth-child(3) .fifthSlider-content {
+    bottom: -75px;
+    left: -93px;
+  }
+
+  &-img-container {
+    position: relative;
+    width: auto; /* Позволяем контейнеру принимать натуральную ширину изображения */
+    display: inline-block; /* Чтобы контейнер оборачивал изображение */
+
+    img {
+      width: auto; /* Сохраняем оригинальную ширину изображения */
+      height: auto; /* Сохраняем пропорции */
+      max-height: 440px; /* Максимальная высота */
+      display: block;
+    }
+  }
+
+  &-content {
+    position: absolute;
+    background: #292929;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+    padding: 26px 26px 29px 26px;
+
+    z-index: 10;
+    bottom: -24px;
+    width: 322px;
+    left: 48px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+  }
+
+  /* Остальные стили остаются без изменений */
+  &-prev, &-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    outline: none;
+  }
+
+  &-prev {
+    left: -68px;
+    background: #f3f3f4;
+
+    path {
+      stroke: #BEBEBE;
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364;
+      }
+    }
+
+    &.swiper-button-disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &-next {
+    right: -68px;
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364;
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+      cursor: not-allowed;
+
+      path {
+        stroke: #BEBEBE;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    margin: 0;
+    color: white;
+  }
+
+  &-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    padding: 5px;
+    background: #fc9ea3;
+  }
+
+  &-desc {
+    line-height: 115%;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    color: white;
+  }
+
+  &-data {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 115%;
+    margin: 0;
+    color: white;
+  }
+}
+
+//seventhSection
+
+.seventhSection {
+  margin-top: 60px;
+
+  &-title {
+    @include title;
+    margin-bottom: 40px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 28px;
+    max-width: 560px;
+  }
+
+  &-name {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    color: #fff;
+    padding: 5px;
+    background: #fcd89e;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+
+}
+
+.sixthSlider {
+  margin-top: 40px;
+
+  &-swiper {
+    overflow: hidden; // Скрываем всё, что выходит за границы
+  }
+
+  &-wrapper {
+    position: relative;
+    // Добавляем отступ между слайдами через margin-right
+    width: auto; // Ширина по содержимому
+    max-width: 225px;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    max-width: 177px;
+  }
+
+  &-pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      background: #f3f3f4;
+      transition: background 0.3s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Стили для кнопки "Назад" (prev)
+  &-prev {
+    path {
+      stroke: #BEBEBE; // Неактивное состояние по умолчанию
+      transition: stroke 0.3s;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Остаётся серым, если нельзя листать
+      }
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364; // Становится тёмным, если можно листать
+      }
+    }
+  }
+}
+
+.seventhSliderSwiper {
+  margin-top: 40px;
+}
+
+.seventhSlider {
+  margin-top: 60px;
+
+  &-title {
+    @include title;
+    font-weight: 700;
+  }
+
+  &-wrapper {
+    //margin-top: 40px;
+    position: relative;
+    width: 870px; // Фиксированная ширина первого слайда
+    height: 464px;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Чтобы изображение заполняло блок
+    display: block;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: 35px;
+    left: 13px;
+    z-index: 2;
+    max-width: 389px;
+
+    div {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+    color: $second-color;
+  }
+
+  &-desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+  }
+
+  &-name {
+    background: #b59efc;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+    color: #fff;
+
+  }
+
+  //&-name:nth-child(2) {
+  //  background: #b59efc;
+  //  color: #fff;
+  //}
+
+  &-pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 100%;
+      background: #f3f3f4;
+      transition: background 0.3s;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Стили для кнопки "Назад" (prev)
+  &-prev {
+    path {
+      stroke: #BEBEBE; // Неактивное состояние по умолчанию
+      transition: stroke 0.3s;
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Остаётся серым, если нельзя листать
+      }
+    }
+
+    &:not(.swiper-button-disabled) {
+      background: #e2e2e5;
+
+      path {
+        stroke: #636364; // Становится тёмным, если можно листать
+      }
+    }
+  }
+
+  // Стили для кнопки "Вперёд" (next)
+  &-next {
+    background: #e2e2e5;
+
+    path {
+      stroke: #636364; // Активное состояние по умолчанию
+    }
+
+    &.swiper-button-disabled {
+      background: #f3f3f4;
+
+      path {
+        stroke: #BEBEBE; // Становится серым, если нельзя листать
+      }
+    }
+  }
+}
+
+//seventhSlider
+
+.seventhSliderSwiper {
+  //overflow: visible;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: 470px; // Фиксированная ширина
+    height: 682px;
+    margin-right: 30px !important; // Приоритет над стилями Swiper
+    flex-shrink: 0;
+
+    &:not(.swiper-slide-active) {
+      opacity: 1; // Убираем прозрачность
+    }
+  }
+}
+
+//eighthSection
+
+.eighthSection {
+  margin-top: 40px;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+
+    li {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 568px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    li:nth-child(5) {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    li:nth-child(6) {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &-name {
+    padding: 5px;
+    background: #b59efc;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &-data {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+
+  &-desc {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 115%;
+  }
+}
+
+//ninthSection
+
+.ninthSection {
+  margin-top: 60px;
+
+  &-content {
+    padding: 29px 70px 28px 69px;
+    background: #cbfc9e;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 120%;
+    gap: 28px;
+  }
+
+  &-link {
+    @include btn;
+    max-width: 401px;
+    padding: 21px 0;
+    font-size: 16px;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+
+  .fifthSection {
+    display: none;
+  }
+
+  .sixthSection {
+    display: none;
+  }
+
+  .seventhSection {
+    display: none;
+  }
+
+  .eighthSection {
+    display: none;
+  }
+
+  .ninthSection {
+    display: none;
+  }
+
+  .fifthSlider {
+    display: none;
+  }
+
+  .sixthSlider {
+    display: none;
+  }
+
+  .seventhSlider {
+    display: none;
+  }
+
+  .secondSection {
+
+    &-list {
+      gap: 9px 10px;
+
+      li {
+        gap: 6px;
+        max-width: 350px;
+        padding-bottom: 9px;
+      }
+
+    }
+
+    &-name {
+      display: none;
+    }
+
+    &-title {
+      font-size: 12px;
+    }
+
+    &-data {
+      font-size: 9px;
+    }
+
+    &-desc {
+      font-size: 9px;
+    }
+  }
+
+  .thirdSection {
+    margin-top: 40px;
+
+    &-title {
+     display: none;
+    }
+
+    &-content {
+      gap: 5px;
+      margin-top: 20px;
+      max-width: 339px;
+    }
+
+    &-name {
+      font-size: 7px;
+      padding: 3px;
+    }
+
+    &-desc {
+      font-size: 9px;
+    }
+
+    &-data {
+      font-size: 9px;
+    }
+
+  }
+
+  .fourthSection {
+    margin-top: 40px;
+
+    &-title {
+      display: none;
+    }
+
+    &-wrapper {
+      margin-top: 0;
+      gap: 10px;
+    }
+
+    .fourthSection-mainBlock {
+      position: relative;
+      max-width: 350px;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+
+      &__content {
+        gap: 7px;
+        bottom: 27px;
+        max-width: 248px;
+        left: 49px;
+      }
+
+      &__name {
+        font-size: 7px;
+        padding: 2.5px;
+      }
+
+      &__title {
+        font-size: 16px;
+      }
+
+      &__desc {
+        font-size: 9px;
+      }
+
+      &__data {
+        font-size: 9px;
+      }
+    }
+
+    .fourthSection-blocks__wrapper {
+      max-width: 350px;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .fourthSection-block {
+
+      max-width: 170px;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 169px;
+      }
+
+      &__content {
+        margin-top: 8.5px;
+        gap: 5px;
+      }
+
+      &__name {
+        padding: 2.5px;
+        font-size: 7px;
+      }
+
+      &__title {
+        font-size: 12px;
+      }
+
+      &__desc {
+        font-size: 9px;
+      }
+
+      &__data {
+        font-size: 9px;
+      }
+    }
+  }
+
+  .thirdSlider {
+
+    &-wrapper {
+      max-width: 136px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-desc {
+      font-size: 9px;
+      bottom: 11px;
+      left: 9px;
+      max-width: 107px;
+    }
+
+    &-pagination {
+      margin-top: 20px;
+      gap: 15px;
+
+      button {
+        width: 23px;
+        height: 23px;
+
+        svg {
+          width: 4px;
+          height: 8px;
+
+          path {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+  }
+
+  .fourthSliderSwiper {
+    margin-top: 0;
+  }
+
+  .fourthSlider {
+    margin-top: 70px;
+
+    &-title {
+      display: none;
+    }
+
+    &-wrapper {
+      width: 290px;
+      height: 412px;
+    }
+
+    &-content {
+      gap: 5px;
+      position: absolute;
+      top: 21px;
+      left: 8px;
+      max-width: 234px;
+    }
+
+    &-data {
+      font-size: 9px;
+    }
+
+    &-desc {
+      font-size: 9px;
+    }
+
+    &-name {
+      padding: 3px;
+      font-size: 7px;
+    }
+
+    &-name:nth-child(2) {
+      background: inherit;
+      color: inherit;
+    }
+
+    &-pagination {
+      margin-top: 20px;
+      gap: 15px;
+
+      button {
+        width: 23px;
+        height: 23px;
+
+        svg {
+          width: 4px;
+          height: 8px;
+
+          path {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+  }
+
+  .fourthSliderSwiper {
+    //overflow: visible;
+
+    .swiper-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .swiper-slide {
+      width: 290px;
+      height: 412px;
+      margin-right: 10px !important; // Приоритет над стилями Swiper
+    }
+  }
+
+  .firstSlider {
+    margin-top: 40px;
+
+    &-wrapper {
+      margin-top: 26px;
+      width: 530px;
+      height: 280px;
+    }
+
+    &-content {
+      gap: 5px;
+      top: 15px;
+      left: 15px;
+      max-width: 237px;
+
+      div {
+        gap: 5px;
+      }
+    }
+
+    &-data {
+      font-size: 9px;
+    }
+
+    &-desc {
+      font-size: 9px;
+    }
+
+    &-name {
+      padding: 3px;
+      font-size: 7px;
+    }
+
+    &-pagination {
+      margin-top: 20px;
+      gap: 15px;
+
+      button {
+        width: 23px;
+        height: 23px;
+
+        svg {
+          width: 4px;
+          height: 8px;
+
+          path {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .firstSliderSwiper {
+
+    .swiper-slide {
+      width: 530px;
+      height: 280px;
+      margin-right: 10px !important; // Приоритет над стилями Swiper
+
+    }
+  }
+
+  .secondSlider {
+    margin-top: 62px;
+
+    &-container {
+      max-width: 710px;
+    }
+
+    &-swiper {
+      height: 332px;
+    }
+
+    &-slide {
+      margin-right: 70px;
+
+    }
+
+    &-slide:first-child {
+
+      .secondSlider-img-container img {
+        height: 195px;
+      }
+    }
+
+    &-slide:nth-child(3) {
+
+      .secondSlider-img-container img {
+        height: 195px;
+      }
+    }
+
+    &-slide:first-child .secondSlider-content {
+      bottom: -95px;
+      left: 28.5px;
+      width: 201px;
+    }
+
+    &-slide:nth-child(3) .secondSlider-content {
+      bottom: -97px;
+      left: -60px;
+    }
+
+    &-img-container {
+      position: relative;
+      width: auto; /* Позволяем контейнеру принимать натуральную ширину изображения */
+      display: inline-block; /* Чтобы контейнер оборачивал изображение */
+
+      img {
+        max-height: 273px; /* Максимальная высота */
+      }
+    }
+
+    &-content {
+      gap: 6px;
+      padding: 21px 16.6px 15px 16.5px;
+      bottom: -58.5px;
+      width: 201px;
+      left: 28.5px;
+    }
+
+    /* Остальные стили остаются без изменений */
+    &-prev, &-next {
+      width: 23px;
+      height: 23px;
+
+      svg {
+        width: 4px;
+        height: 8px;
+      }
+    }
+
+    &-prev {
+      left: -38px;
+
+    }
+
+    &-next {
+      right: -38px;
+    }
+
+    &-title {
+      font-size: 9px;
+    }
+
+    &-name {
+      font-size: 7px;
+      padding: 3px;
+    }
+
+    &-desc {
+      font-size: 9px;
+    }
+
+    &-data {
+      font-size: 9px;
+    }
+  }
+
+  .firstSection-wrapper {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .firstSection-mainBlock {
+
+    &__title {
+      max-width: 270px;
+      font-size: 13px;
+    }
+
+    &__content {
+      bottom: 9px;
+      left: 15px;
+      gap: 7px;
+    }
+
+    &__data {
+      font-size: 9px;
+    }
+
+    &__desc {
+      font-size: 9px;
+      max-width: 338px;
+    }
+
+    &__name {
+      padding: 2.5px;
+      font-size: 7px;
+    }
+  }
+
+  .firstSection-block {
+
+    &__content {
+      bottom: 5px;
+      left: 5px;
+      gap: 4px;
+    }
+
+    &__data {
+      font-size: 6px;
+    }
+
+    &__desc {
+      max-width: 139px;
+      font-size: 6px;
+    }
+
+    &__name {
+      padding: 2.5px;
+      font-size: 6px;
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fourthSlider {
+    margin-top: 30px;
+
+    &-wrapper {
+      width: 280px;
+      height: 280px;
+    }
+
+    &-content {
+      top: 14px;
+      left: 13px;
+      max-width: 236px;
+    }
+
+  }
+
+  .fourthSliderSwiper {
+
+    .swiper-slide {
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  .firstSlider {
+    margin-top: 30px;
+
+    &-wrapper {
+      margin-top: 0;
+      width: 280px;
+      height: 280px;
+    }
+
+    &-content {
+      top: 14px;
+      left: 13px;
+      max-width: 236px;
+    }
+
+    &-title {
+      display: none;
+    }
+
+  }
+
+  .firstSliderSwiper {
+
+    .swiper-slide {
+      width: 280px;
+      height: 280px;
+
+    }
+  }
+
+  .secondSection {
+
+    margin-top: 30px;
+
+    &-list {
+      gap: 9px;
+
+      li {
+        max-width: 320px;
+        padding-bottom: 9px;
+      }
+
+      li:nth-child(5) {
+        padding-bottom: 9px;
+        border-bottom: 1px solid #dfdfdf;
+      }
+
+    }
+  }
+
+  .thirdSection {
+    margin-top: 30px;
+
+    &-content {
+      max-width: 320px;
+    }
+
+  }
+
+  .fourthSection {
+    margin-top: 30px;
+
+    &-wrapper {
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .fourthSection-mainBlock {
+      max-width: 320px;
+
+      &__content {
+        gap: 11px;
+        bottom: 23.5px;
+        max-width: 266px;
+        left: 25px;
+      }
+
+    }
+
+    .fourthSection-blocks__wrapper {
+      max-width: 320px;
+      gap: 20px;
+    }
+
+    .fourthSection-block {
+
+      max-width: 150px;
+
+      img {
+        height: 155px;
+      }
+
+      &__content {
+        margin-top: 10px;
+        gap: 5.5px;
+      }
+
+      &__title {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .thirdSlider {
+    margin-top: 30px;
+  }
+
+  .secondSlider {
+    display: none;
+  }
+
+  .firstSection-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .firstSection-mainBlock {
+    width: 100%;
+
+    &__title {
+      max-width: 270px;
+      font-size: 12px;
+    }
+
+    &__content {
+      left: 20px;
+      bottom: 17px;
+    }
+
+  }
+
+  .firstSection-block {
+
+    &__content {
+      bottom: 6px;
+      left: 6px;
+      gap: 5px;
+    }
+
+    &__data {
+      font-size: 7px;
+    }
+
+    &__desc {
+      max-width: 139px;
+      font-size: 7px;
+    }
+
+    &__name {
+      padding: 3px;
+      font-size: 7px;
+    }
+
+    &__wrapper {
+      width: 100%;
+    }
+
+  }
+}

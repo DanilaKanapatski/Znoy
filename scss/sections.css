@@ -175,8 +175,8 @@ body {
 
 @media screen and (max-width: 1068px) {
   .container {
-    max-width: 749px;
-    padding: 0 20px;
+    max-width: 768px;
+    padding: 0 29px;
   }
   .header {
     padding: 31px 0 0 0;
@@ -272,8 +272,8 @@ body {
 }
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 350px;
-    padding: 0 15px;
+    max-width: 360px;
+    padding: 0 20px;
   }
   .header {
     display: none;
@@ -758,7 +758,7 @@ body {
   padding: 28px 26px 27px 28px;
   z-index: 10;
   bottom: -24px;
-  max-width: 322px;
+  width: 322px;
   left: 48px;
   box-sizing: border-box; /* Учитываем padding в общей ширине */
 }
